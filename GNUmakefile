@@ -20,7 +20,7 @@ export BOARD_MODEL := VIRT
 all: $(IMAGE)
 
 clean:
-	rm -rf $(IMAGE) $(S_OBJS) $(C_OBJS) link.ld
+	rm -rf $(IMAGE) $(S_OBJS) $(C_OBJS) link.ld $(IMAGE).map
 
 $(IMAGE): $(S_OBJS) $(C_OBJS) $(H_DEPS) link.ld GNUmakefile
 	$(CC) -o $@ $(S_OBJS) $(C_OBJS) $(LIBS) $(LDFLAGS) \

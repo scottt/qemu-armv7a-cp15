@@ -44,5 +44,5 @@ qemu:
 	qemu-system-arm -M virt -cpu cortex-a15 -s -S
 
 .PHONY: gdb
-gdb:
+gdb: $(IMAGE)
 	$(GDB) -q -x qemu-connect.gdb -x cp15-demo.gdb

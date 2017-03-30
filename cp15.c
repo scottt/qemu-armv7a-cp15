@@ -50,7 +50,7 @@ void auxcr_set(unsigned int v)
 int cpuid_get(void)
 {
 	int cpu;
-	__asm__ volatile ("mrc p15, 0, %0, c0, c0, 5; "
+	__asm__ volatile ("mrc p15, 0, %[cpu], c0, c0, 5; "
 			  "and %[cpu], %[cpu], #15"
 			: /* outputs  */ [cpu] "=r" (cpu)
 			: /* inputs   */
